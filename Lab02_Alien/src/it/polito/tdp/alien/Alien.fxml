@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="343.0" prefWidth="513.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.alien.AlienController">
+<BorderPane prefHeight="343.0" prefWidth="513.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.alien.AlienController">
    <top>
       <Label text="Lab 1 - Alien Translator" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -19,4 +26,37 @@
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <GridPane prefHeight="54.0" prefWidth="494.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.20001220703125" minWidth="10.0" prefWidth="90.4000244140625" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="246.00001220703126" minWidth="10.0" prefWidth="246.00001220703126" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.20001220703125" minWidth="10.0" prefWidth="11.999987792968739" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.20001220703125" minWidth="10.0" prefWidth="72.00001220703126" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.20001220703125" minWidth="10.0" prefWidth="100.20001220703125" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#doTranslate" prefHeight="26.0" prefWidth="77.0" text="Translate" GridPane.columnIndex="3" />
+                  <TextField fx:id="txtWord" promptText="Insert the text..." GridPane.columnIndex="1" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="82.0" text="Alien Text:" />
+               </children>
+            </GridPane>
+         </top>
+         <center>
+            <TextArea fx:id="txtResult" prefHeight="119.0" prefWidth="494.0" BorderPane.alignment="CENTER" />
+         </center>
+         <bottom>
+            <AnchorPane minHeight="-Infinity" prefHeight="40.0" prefWidth="494.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="442.0" layoutY="7.0" mnemonicParsing="false" onAction="#doReset" text="Clear Text" />
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </center>
 </BorderPane>
